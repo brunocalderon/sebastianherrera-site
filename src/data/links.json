@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Link 1",
+    "href": "https://example.com/link-1",
+    "thumbnail": "/images/placeholders/link-1.svg"
+  },
+  {
+    "title": "Link 2",
+    "href": "https://example.com/link-2",
+    "thumbnail": "/images/placeholders/link-2.svg"
+  },
+  {
+    "title": "Link 3",
+    "href": "https://example.com/link-3",
+    "thumbnail": "/images/placeholders/link-3.svg"
+  },
+  {
+    "title": "Link 4",
+    "href": "https://example.com/link-4",
+    "thumbnail": "/images/placeholders/link-4.svg"
+  },
+  {
+    "title": "Link 5",
+    "href": "https://example.com/link-5",
+    "thumbnail": "/images/placeholders/link-5.svg"
+  }
+]

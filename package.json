@@ -1,0 +1,28 @@
+{
+  "name": "sebastianherrera-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "capture:linktree": "node tests/visual/capture-linktree-reference.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.11",
+    "marked": "^18.2.0",
+    "tailwindcss": "^4.3.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0"
+  }
+}
