@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { profile } from "../data/profile";
-import { absoluteUrl, bioToPlainText, canonicalUrl } from "../utils/seo";
+import { bioToPlainText } from "../utils/seo";
 
 interface Props {
   title?: string;
@@ -16,9 +16,8 @@ const description =
 const imagePath = Astro.props.image ?? profile.heroImage;
 const imageAlt = Astro.props.imageAlt ?? profile.heroAlt;
 
-const siteOrigin = Astro.site ?? Astro.url;
-const canonicalURL = canonicalUrl(Astro.url.pathname, siteOrigin);
-const ogImageURL = absoluteUrl(imagePath, siteOrigin);
+const canonicalPath =
+  Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
 const shortTitle = profile.name;
 ---
 
@@ -30,7 +29,7 @@ const shortTitle = profile.name;
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#89959f" />
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={canonicalPath} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
 
@@ -38,15 +37,15 @@ const shortTitle = profile.name;
     <meta property="og:site_name" content={shortTitle} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalPath} />
+    <meta property="og:image" content={imagePath} />
     <meta property="og:image:alt" content={imageAlt} />
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image" content={imagePath} />
     <meta name="twitter:image:alt" content={imageAlt} />
   </head>
   <body class="min-h-dvh bg-page font-body text-primary antialiased">
